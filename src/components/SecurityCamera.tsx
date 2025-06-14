@@ -23,7 +23,7 @@ const SecurityCamera: React.FC = () => {
         video: {
           width: { ideal: 1280 },
           height: { ideal: 720 },
-          facingMode: 'user' // Front camera for security
+          facingMode: 'user'
         },
         audio: false
       });
@@ -106,7 +106,6 @@ const SecurityCamera: React.FC = () => {
     }
   };
 
-  // Simulate unauthorized access detection
   const simulateUnauthorizedAccess = () => {
     if (isActive) {
       captureImage('unauthorized_access');

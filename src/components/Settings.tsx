@@ -3,31 +3,20 @@ import { Settings as SettingsIcon, Shield, Bell, MapPin, Camera, Lock, Save } fr
 
 const Settings: React.FC = () => {
   const [settings, setSettings] = useState({
-    // Security Settings
     autoLock: true,
-    lockTimeout: 5, // minutes
+    lockTimeout: 5,
     unauthorizedAccessAlert: true,
-    
-    // Location Settings
     locationTracking: true,
-    locationFrequency: 30, // seconds
+    locationFrequency: 30,
     highAccuracyMode: true,
-    
-    // Camera Settings
     autoCapture: true,
     motionDetection: true,
     imageQuality: 'high',
-    
-    // Notification Settings
     emailNotifications: true,
     pushNotifications: true,
     criticalAlertsOnly: false,
-    
-    // Privacy Settings
-    dataRetention: 30, // days
+    dataRetention: 30,
     encryptData: true,
-    
-    // Device Settings
     deviceName: 'My Phone',
     ownerEmail: 'owner@example.com'
   });
@@ -40,7 +29,6 @@ const Settings: React.FC = () => {
   };
 
   const saveSettings = () => {
-    // In a real app, this would save to a backend or local storage
     console.log('Settings saved:', settings);
     alert('Settings saved successfully!');
   };

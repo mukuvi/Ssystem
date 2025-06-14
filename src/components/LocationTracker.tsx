@@ -59,11 +59,6 @@ const LocationTracker: React.FC = () => {
   const startTracking = () => {
     setIsTracking(true);
     getCurrentLocation();
-    
-    // Update location every 30 seconds
-    const interval = setInterval(getCurrentLocation, 30000);
-    
-    return () => clearInterval(interval);
   };
 
   const stopTracking = () => {
@@ -225,7 +220,7 @@ const LocationTracker: React.FC = () => {
           <div className="flex items-center space-x-3">
             <div className="w-3 h-3 bg-primary-600 rounded-full animate-pulse"></div>
             <p className="text-primary-700 font-medium">
-              Location tracking is active. Your device location is being monitored every 30 seconds.
+              Location tracking is active. Your device location is being monitored.
             </p>
           </div>
         </div>

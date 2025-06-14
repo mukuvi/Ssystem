@@ -15,7 +15,6 @@ const SecurityLogs: React.FC = () => {
   const [filter, setFilter] = useState<'all' | SecurityEvent['type']>('all');
   const [severityFilter, setSeverityFilter] = useState<'all' | SecurityEvent['severity']>('all');
 
-  // Generate sample security logs
   useEffect(() => {
     const sampleLogs: SecurityEvent[] = [
       {
@@ -23,7 +22,7 @@ const SecurityLogs: React.FC = () => {
         type: 'unauthorized_access',
         severity: 'critical',
         message: 'Unauthorized access attempt detected',
-        timestamp: new Date(Date.now() - 1000 * 60 * 5), // 5 minutes ago
+        timestamp: new Date(Date.now() - 1000 * 60 * 5),
         details: { attempts: 3, location: 'Unknown' }
       },
       {
@@ -31,7 +30,7 @@ const SecurityLogs: React.FC = () => {
         type: 'camera_activation',
         severity: 'medium',
         message: 'Security camera activated automatically',
-        timestamp: new Date(Date.now() - 1000 * 60 * 15), // 15 minutes ago
+        timestamp: new Date(Date.now() - 1000 * 60 * 15),
         details: { trigger: 'motion_detected' }
       },
       {
@@ -39,7 +38,7 @@ const SecurityLogs: React.FC = () => {
         type: 'location_change',
         severity: 'low',
         message: 'Device location updated',
-        timestamp: new Date(Date.now() - 1000 * 60 * 30), // 30 minutes ago
+        timestamp: new Date(Date.now() - 1000 * 60 * 30),
         details: { lat: 40.7128, lng: -74.0060 }
       },
       {
@@ -47,7 +46,7 @@ const SecurityLogs: React.FC = () => {
         type: 'device_lock',
         severity: 'medium',
         message: 'Device locked remotely',
-        timestamp: new Date(Date.now() - 1000 * 60 * 60), // 1 hour ago
+        timestamp: new Date(Date.now() - 1000 * 60 * 60),
         details: { user: 'owner' }
       },
       {
@@ -55,7 +54,7 @@ const SecurityLogs: React.FC = () => {
         type: 'login_attempt',
         severity: 'high',
         message: 'Failed login attempt from unknown device',
-        timestamp: new Date(Date.now() - 1000 * 60 * 90), // 1.5 hours ago
+        timestamp: new Date(Date.now() - 1000 * 60 * 90),
         details: { ip: '192.168.1.100', userAgent: 'Unknown Browser' }
       }
     ];

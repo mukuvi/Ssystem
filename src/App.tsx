@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, MapPin, Camera, Lock, Smartphone, AlertTriangle, CheckCircle, Eye, EyeOff } from 'lucide-react';
+import Dashboard from './components/Dashboard';
 import LocationTracker from './components/LocationTracker';
 import SecurityCamera from './components/SecurityCamera';
-import DeviceStatus from './components/DeviceStatus';
 import SecurityLogs from './components/SecurityLogs';
 import Settings from './components/Settings';
 
@@ -13,7 +13,7 @@ function App() {
     isOnline: true,
     batteryLevel: 85,
     lastSeen: new Date(),
-    location: { lat: 0, lng: 0 }
+    location: { lat: 40.7128, lng: -74.0060 }
   });
 
   const tabs = [
@@ -27,7 +27,7 @@ function App() {
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <DeviceStatus deviceStatus={deviceStatus} />;
+        return <Dashboard deviceStatus={deviceStatus} />;
       case 'location':
         return <LocationTracker />;
       case 'camera':
@@ -37,7 +37,7 @@ function App() {
       case 'settings':
         return <Settings />;
       default:
-        return <DeviceStatus deviceStatus={deviceStatus} />;
+        return <Dashboard deviceStatus={deviceStatus} />;
     }
   };
 
